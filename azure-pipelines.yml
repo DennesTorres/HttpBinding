@@ -15,7 +15,6 @@ steps:
     command: 'publish'
     publishWebProjects: false
     modifyOutputPath: false
-    workingDirectory: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
