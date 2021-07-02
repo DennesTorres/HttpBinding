@@ -12,9 +12,10 @@ pool:
 steps:
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'build'
-    projects: 'libTools/libTools.csproj'
-    arguments: 
+    command: 'publish'
+    publishWebProjects: false
+    modifyOutputPath: false
+    workingDirectory: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
