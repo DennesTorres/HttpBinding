@@ -15,6 +15,8 @@ steps:
     command: 'publish'
     publishWebProjects: false
     arguments: '--output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: false
+    modifyOutputPath: false
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
