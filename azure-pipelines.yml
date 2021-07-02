@@ -12,11 +12,9 @@ pool:
 steps:
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'publish'
-    publishWebProjects: false
-    arguments: '--output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: false
-    modifyOutputPath: false
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byBuildNumber'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
