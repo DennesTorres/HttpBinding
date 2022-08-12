@@ -10,7 +10,7 @@ namespace libTools.Bindings
     public class FromBodyBindingProvider : IBindingProvider
     {
         private readonly ILogger logger;
-        public FromBodyBindingProvider(ILogger logger)
+        public FromBodyBindingProvider(ILogger<FromBodyBindingProvider> logger)
         {
             this.logger = logger;
         }
