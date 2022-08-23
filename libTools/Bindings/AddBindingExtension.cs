@@ -1,5 +1,6 @@
 ﻿using Microsoft.Azure.WebJobs;
 using System;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 
 namespace libTools.Bindings
 {
@@ -11,7 +12,7 @@ namespace libTools.Bindings
             {
                 throw new ArgumentNullException(nameof(builder));
             }
-
+            
             builder.AddExtension<FromBodyBindingProviderConfig>();
             return builder;
         }
